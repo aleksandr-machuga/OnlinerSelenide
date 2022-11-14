@@ -8,7 +8,7 @@ public class DriverConfigurator {
         chromedriver().setup();
         browser = "chrome";
         pageLoadTimeout = 20000;
-        timeout = 45000;
+        timeout = 30000;
         browserSize = "1920x1080";
     }
 }

@@ -11,7 +11,7 @@ public class OnlinerTest extends BaseTest {
             "Бытовая техника", "Дом и", "Стройка и", "Авто и", "Красота и", "Детям и", "Работа и");
     public static final String ACCESSORIES = "Комплектующие";
     private static final List<String> MENU_OPTIONS = Arrays.asList
-            (" Ноутбуки, компьютеры, мониторы ", ACCESSORIES, "Хранение данных", "Сетевое оборудование");
+            ("Ноутбуки, компьютеры, мониторы", ACCESSORIES, "Хранение данных", "Сетевое оборудование");
 
     @Test
     public void testCatalogSectionsPresence() {
