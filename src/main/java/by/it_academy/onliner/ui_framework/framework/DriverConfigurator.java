@@ -1,4 +1,4 @@
-package by.it_academy.onliner.framework;
+package by.it_academy.onliner.ui_framework.framework;
 
 import static com.codeborne.selenide.Configuration.*;
 import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;

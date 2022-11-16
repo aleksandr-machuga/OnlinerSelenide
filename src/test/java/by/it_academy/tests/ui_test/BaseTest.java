@@ -1,7 +1,7 @@
-package by.it_academy.test;
+package by.it_academy.tests.ui_test;
 
-import by.it_academy.onliner.framework.DriverConfigurator;
-import by.it_academy.onliner.page_object.HomePage;
+import by.it_academy.onliner.ui_framework.framework.DriverConfigurator;
+import by.it_academy.onliner.ui_framework.page_object.HomePage;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

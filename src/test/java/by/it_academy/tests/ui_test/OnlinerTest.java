@@ -1,4 +1,4 @@
-package by.it_academy.test;
+package by.it_academy.tests.ui_test;
 
 import org.testng.annotations.Test;
 

@@ -1,4 +1,4 @@
-package by.it_academy.onliner.page_object;
+package by.it_academy.onliner.ui_framework.page_object;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
