@@ -1,12 +1,13 @@
 package by.it_academy.onliner.ui_framework.framework;
 
+import static by.it_academy.onliner.ui_framework.framework.FactoryOperator.getDriverFactory;
 import static com.codeborne.selenide.Configuration.*;
-import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
 
 public class DriverConfigurator {
-    public static void setUpDriver() {
-        chromedriver().setup();
-        browser = "chrome";
+
+    public static void setUpDriver(String browser) {
+        DriverFactory driverFactory = getDriverFactory();
+        driverFactory.setUp(browser);
         pageLoadTimeout = 20000;
         timeout = 30000;
         browserSize = "1920x1080";
