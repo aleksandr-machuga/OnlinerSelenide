@@ -19,6 +19,7 @@ public class LocalDriverFactory implements DriverFactory {
                 EdgeOptions options = new EdgeOptions();
                 DesiredCapabilities capabilities = new DesiredCapabilities();
                 options.addArguments("--headless");
+                options.addArguments("--remote-debugging-port=<port>");
                 capabilities.setCapability(EdgeOptions.CAPABILITY, options);
                 Configuration.browserCapabilities=capabilities;
             }
