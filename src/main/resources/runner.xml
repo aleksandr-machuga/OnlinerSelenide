@@ -12,12 +12,6 @@
             <class name="by.it_academy.tests.ui_test.OnlinerTest"/>
         </classes>
     </test>
-    <test name="Onliner tests on edge">
-        <parameter name="browser" value="edge"/>
-        <classes>
-            <class name="by.it_academy.tests.ui_test.OnlinerTest"/>
-        </classes>
-    </test>
     <test name="API Onliner tests">
         <classes>
             <class name="by.it_academy.tests.api_tests.SushiveslaTest"/>
