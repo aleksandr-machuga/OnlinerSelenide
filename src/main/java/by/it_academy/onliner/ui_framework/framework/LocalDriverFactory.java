@@ -11,10 +11,10 @@ public class LocalDriverFactory implements DriverFactory {
     @Override
     public void setUp(String browser) {
         Configuration.browser = defaultIfNull(browser, DEFAULT_BROWSER);
-        switch (defaultIfNull(browser, DEFAULT_BROWSER)) {
-            case ConfigurationConstants.EDGE_BROWSER -> edgedriver().setup();
-            case ConfigurationConstants.FIREFOX_BROWSER -> firefoxdriver().setup();
-            default -> chromedriver().setup();
+        if (ConfigurationConstants.FIREFOX_BROWSER.equals(defaultIfNull(browser, DEFAULT_BROWSER))) {
+            firefoxdriver().setup();
+        } else {
+            chromedriver().setup();
         }
     }
 }
