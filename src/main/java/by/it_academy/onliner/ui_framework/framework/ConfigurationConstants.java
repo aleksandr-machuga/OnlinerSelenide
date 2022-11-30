@@ -5,4 +5,6 @@ public interface ConfigurationConstants {
     String HUB_URL_PATTERN = "http://%s:4444/wd/hub";
     String DEFAULT_BROWSER = "chrome";
     String FIREFOX_BROWSER = "firefox";
+    String EDGE_BROWSER = "microsoftedge";
 }
+
