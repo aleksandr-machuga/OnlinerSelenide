@@ -3,6 +3,8 @@ package by.it_academy.onliner.ui_framework.page_object;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.List;
@@ -26,34 +28,40 @@ public class CatalogPage {
     private static final String SECTION_OPTION_DESCRIPTION_XPATH =
             ".//span[@class='catalog-navigation-list__dropdown-description']";
     public static final Duration DURATION = Duration.ofSeconds(5);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CatalogPage.class);
 
     @Step("Verify sections are visible {catalogSections}")
     public CatalogPage verifySectionsExist(List<String> catalogSections) {
         catalogItems.shouldHave(textsInAnyOrder(catalogSections));
+        LOGGER.info("Check catalog sections {} exist", catalogSections);
         return this;
     }
 
     @Step("Click catalog section {section}")
     public CatalogPage clickCatalogSection(String section) {
         catalogItems.findBy(text(section)).click();
+        LOGGER.info("Open catalog section {}", section);
         return this;
     }
 
     @Step("Verify sections are visible in menu")
     public CatalogPage verifySectionMenuVisible() {
         asideMenu.shouldBe(visible, DURATION);
+        LOGGER.info("Check aside menu is opened");
         return this;
     }
 
     @Step("Verify  visible menu options {menuOptions}")
     public CatalogPage verifyMenuOptionsVisible(List<String> menuOptions) {
         asideMenuItems.shouldHave(containExactTextsCaseSensitive(menuOptions));
+        LOGGER.info("Check that aside menu has options {}", menuOptions);
         return this;
     }
 
     @Step("Click aside menu option {option}")
     public CatalogPage clickAsideMenuOption(String option) {
         asideMenuItems.findBy(text(option)).click();
+        LOGGER.info("Opened aside menu option {}", option);
         return this;
     }
 
@@ -67,6 +75,7 @@ public class CatalogPage {
     private CatalogPage verifyMenuElementContent(SelenideElement element) {
         element.$(SECTION_OPTION_TITLE_CSS).shouldBe(visible, DURATION);
         element.$x(SECTION_OPTION_DESCRIPTION_XPATH).shouldHave(text(QUANTITY_KEYWORD), text(PRICE_KEYWORD));
+        LOGGER.info("Check menu element {} has title, quantity, price", element.$(SECTION_OPTION_TITLE_CSS).getText());
         return this;
     }
 }
