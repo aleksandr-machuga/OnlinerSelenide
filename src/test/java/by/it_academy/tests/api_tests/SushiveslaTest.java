@@ -2,6 +2,8 @@ package by.it_academy.tests.api_tests;
 
 import by.it_academy.onliner.api_framework.entity.Product;
 import io.restassured.response.ResponseBody;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -19,10 +21,12 @@ public class SushiveslaTest {
     public static final String FILTER_VALUE = "roll";
     public static final String NAME_PREFIX_JSON_PATH = "products.name_prefix";
     public static final String EXPECTED_VALUE = "Роллы";
+    public static final Logger LOGGER = LoggerFactory.getLogger(SushiveslaTest.class);
 
     @Test
     public void testProductFields() {
         ResponseBody responseBody = makeResponseAndRequestBody(getProductsEndpoint(), null, null);
+        LOGGER.info("Received response:{} ", responseBody.asString());
         List<Product> products = getObjectsByJsonPath(responseBody, PRODUCTS_JSON_PATH, Product.class);
         products.forEach(product -> assertThat(product)
                 .as("Product " + product.getId() + " has null fields")
