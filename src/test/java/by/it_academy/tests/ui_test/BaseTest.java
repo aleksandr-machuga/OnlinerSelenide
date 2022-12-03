@@ -1,6 +1,6 @@
 package by.it_academy.tests.ui_test;
 
-import by.it_academy.onliner.listeners.AllureListener;
+import by.it_academy.onliner.ui_framework.listeners.AllureListener;
 import by.it_academy.onliner.ui_framework.page_object.HomePage;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.slf4j.Logger;
