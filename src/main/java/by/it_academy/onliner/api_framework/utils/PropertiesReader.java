@@ -17,7 +17,7 @@ public class PropertiesReader {
         return ENDPOINT_PROPERTIES.getProperty(property);
     }
 
-    private static synchronized void initProperties(Properties properties, String fileName) {
+    private static void initProperties(Properties properties, String fileName) {
         try (InputStream inputStream = PropertiesReader.class.getResourceAsStream(fileName)) {
             properties.load(inputStream);
         } catch (IOException e) {

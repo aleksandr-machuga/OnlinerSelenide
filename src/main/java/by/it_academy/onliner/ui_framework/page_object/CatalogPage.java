@@ -15,7 +15,8 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class CatalogPage {
-    private final SelenideElement asideMenu = $("div.catalog-navigation-list__category[style='display: block;']");
+    private final SelenideElement asideMenu =
+            $("div.catalog-navigation-list__category[style='display: block;']");
     private final ElementsCollection sectionOptions =
             $$("div[class*='aside-item_active'] a.catalog-navigation-list__dropdown-item");
     private final ElementsCollection catalogItems =
@@ -67,7 +68,7 @@ public class CatalogPage {
 
     @Step("Verify content of menu elements")
     public CatalogPage verifyMenuElementsContent() {
-        sectionOptions.asFixedIterable().forEach(element -> verifyMenuElementContent(element));
+        sectionOptions.asFixedIterable().forEach(this::verifyMenuElementContent);
         return this;
     }
 
