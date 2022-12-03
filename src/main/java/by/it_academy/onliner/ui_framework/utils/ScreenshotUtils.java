@@ -1,4 +1,4 @@
-package by.it_academy.onliner.api_framework.utils;
+package by.it_academy.onliner.ui_framework.utils;
 
 import java.io.File;
 import java.io.IOException;

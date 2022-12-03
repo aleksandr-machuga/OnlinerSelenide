@@ -1,9 +1,9 @@
-package by.it_academy.onliner.listeners;
+package by.it_academy.onliner.ui_framework.listeners;
 
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
-import static by.it_academy.onliner.api_framework.utils.ScreenshotUtils.takeScreenshotAndAttachToAllureReport;
+import static by.it_academy.onliner.ui_framework.utils.ScreenshotUtils.takeScreenshotAndAttachToAllureReport;
 
 public class AllureListener extends TestListenerAdapter {
     @Override
